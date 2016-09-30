@@ -92,3 +92,6 @@ yum -y install php-5.3-zend-guard-loader sysadmin fail2ban incron ImageMagick
 service httpd restart
 fwconsole ma download sysadmin
 fwconsole ma install sysadmin
+
+sleep 10
+reboot
