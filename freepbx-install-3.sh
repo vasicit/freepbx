@@ -105,6 +105,8 @@ fwconsole ma install sysadmin
 chown -R asterisk:asterisk /var/log/asterisk
 chown -R asterisk:asterisk /var/run/asterisk
 chown -R asterisk:asterisk /var/lib/asterisk
+fwconsole ma enablerepo extended
+fwconsole ma enablerepo commercial
 fwconsole ma refreshsignatures
 wait ${!}
 
