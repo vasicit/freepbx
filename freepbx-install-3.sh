@@ -103,6 +103,8 @@ fwconsole ma download sysadmin
 fwconsole ma install sysadmin
 #Author add
 chown -R asterisk:asterisk /var/log/asterisk
+chown -R asterisk:asterisk /var/run/asterisk
+
 wait ${!}
 
 sleep 10
