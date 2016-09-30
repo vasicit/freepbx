@@ -47,7 +47,7 @@ contrib/scripts/install_prereq install
 ./configure --libdir=/usr/lib64
 contrib/scripts/get_mp3_source.sh
 wait ${!}
-make menuselect
+make menuselect.makeopts
 wait ${!}
 make
 make install
