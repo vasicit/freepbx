@@ -101,6 +101,8 @@ service httpd restart
 wait ${!}
 fwconsole ma download sysadmin
 fwconsole ma install sysadmin
+#Author add
+chown -R asterisk:asterisk /var/log/asterisk
 wait ${!}
 
 sleep 10
