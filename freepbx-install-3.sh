@@ -77,7 +77,7 @@ chown -R asterisk. /var/{lib,log,spool}/asterisk
 chown -R asterisk. /usr/lib64/asterisk
 chown -R asterisk. /var/www/
 
-sed -i 's/\(^upload_max_filesize = \).*/\120M/' /etc/php.ini
+sed -i 's/\(^upload_max_filesize = \).*/\256M/' /etc/php.ini
 sed -i 's/^\(User\|Group\).*/\1 asterisk/' /etc/httpd/conf/httpd.conf
 sed -i 's/AllowOverride None/AllowOverride All/' /etc/httpd/conf/httpd.conf
 service httpd restart
