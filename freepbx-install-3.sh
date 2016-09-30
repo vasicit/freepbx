@@ -104,7 +104,7 @@ fwconsole ma install sysadmin
 #Author add
 chown -R asterisk:asterisk /var/log/asterisk
 chown -R asterisk:asterisk /var/run/asterisk
-
+fwconsole ma refreshsignatures
 wait ${!}
 
 sleep 10
