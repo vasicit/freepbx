@@ -10,5 +10,5 @@ chkconfig --level 345 httpd on
 service httpd start
 pear channel-update pear.php.net
 pear install db-1.7.14
-wait 3
+wait ${!}
 reboot
