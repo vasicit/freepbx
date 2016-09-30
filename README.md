@@ -14,7 +14,7 @@ Upon completion of the first script the system will reboot automatically.
 After reboot log back in, return to the same folder and run the 2nd, then after another reboot run the 3rd.
 The system will reboot once again and be ready with a freshly installed FreePBX 13.
 
-This will be combined to one script using chkconfig so it will reboot and resume installation automatically.
+This will be eventually combined to one script using chkconfig so it will reboot and resume installation automatically.
 
 These installation scripts are only successfully tested on CentOS 6 VPS's on GCP, DigitalOcean, VULTR and Linode 
 as only CentOS 6 is officially supported by FreePBX and Sangoma for commercial modules. 
