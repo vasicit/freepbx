@@ -102,11 +102,13 @@ wait ${!}
 fwconsole ma download sysadmin
 fwconsole ma install sysadmin
 #Author add
+fwconsole ma enablerepo extended
+fwconsole ma enablerepo commercial
 chown -R asterisk:asterisk /var/log/asterisk
 chown -R asterisk:asterisk /var/run/asterisk
 chown -R asterisk:asterisk /var/lib/asterisk
-fwconsole ma enablerepo extended
-fwconsole ma enablerepo commercial
+fwconsole ma download conferences
+fwconsole ma install conferences
 fwconsole ma refreshsignatures
 wait ${!}
 
