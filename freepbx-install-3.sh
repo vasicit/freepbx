@@ -101,6 +101,7 @@ service httpd restart
 wait ${!}
 fwconsole ma download sysadmin
 fwconsole ma install sysadmin
+
 #Author add
 fwconsole ma enablerepo extended
 fwconsole ma enablerepo commercial
@@ -113,7 +114,14 @@ chown -R asterisk:asterisk /var/lib/asterisk/*
 fwconsole ma download conferences
 fwconsole ma install conferences
 fwconsole ma refreshsignatures
+
+cd /usr/bin
+git clone https://github.com/vasicit/freepbx-update.git
+chmod +x /usr/bin/freepbx-update/freepbx-update-script.sh
+echo '0 3 * * * /usr/bin/freepbx-update/freepbx-update-script.sh'
+
 wait ${!}
 
 sleep 10
 reboot
+ 
