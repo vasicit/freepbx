@@ -118,8 +118,7 @@ fwconsole ma refreshsignatures
 cd /usr/bin
 git clone https://github.com/vasicit/freepbx-update.git
 chmod +x /usr/bin/freepbx-update/freepbx-update-script.sh
-echo '0 3 * * * /usr/bin/freepbx-update/freepbx-update-script.sh'
-
+echo '0 3 * * * /usr/bin/freepbx-update/freepbx-update-script.sh' >> /etc/crontab
 wait ${!}
 
 sleep 10
