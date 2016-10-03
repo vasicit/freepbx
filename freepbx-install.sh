@@ -143,7 +143,7 @@ chmod +x /usr/bin/freepbx-update/freepbx-update-script.sh
 git clone https://github.com/vasicit/freepbx-install.git
 chmod +x /usr/bin/freepbx-install/freepbx-maint.sh
 echo '0 3 * * * /usr/bin/freepbx-update/freepbx-update-script.sh' >> /etc/crontab
-echo '@reboot /usr/bin/freepbx-install/freepbx-maint.sh
+echo '@reboot' >> /usr/bin/freepbx-install/freepbx-maint.sh
 wait ${!}
 
 sleep 10
