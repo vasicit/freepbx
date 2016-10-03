@@ -138,12 +138,11 @@ fwconsole ma install conferences
 fwconsole ma refreshsignatures
 
 cd /usr/bin
-git clone https://github.com/vasicit/freepbx-update.git
-chmod +x /usr/bin/freepbx-update/freepbx-update-script.sh
-git clone https://github.com/vasicit/freepbx-install.git
-chmod +x /usr/bin/freepbx-install/freepbx-maint.sh
-echo '0 3 * * * /usr/bin/freepbx-update/freepbx-update-script.sh' >> /etc/crontab
-echo '@reboot' >> /usr/bin/freepbx-install/freepbx-maint.sh
+git clone https://github.com/vasicit/freepbx.git
+chmod +x /usr/bin/freepbx/freepbx-update.sh
+chmod +x /usr/bin/freepbx/freepbx-maint.sh
+echo '0 3 * * * /usr/bin/freepbx/freepbx-update.sh' >> /etc/crontab
+echo '@reboot /usr/bin/freepbx/freepbx-maint.sh' >> /etc/crontab
 wait ${!}
 
 sleep 10
