@@ -127,6 +127,8 @@ fwconsole ma install sysadmin
 #Author add
 fwconsole ma enablerepo extended
 fwconsole ma enablerepo commercial
+mkdir /tftpboot
+chown -R asterisk:asterisk /tftpboot
 chown -R asterisk:asterisk /var/log/asterisk
 chown -R asterisk:asterisk /var/run/asterisk
 chown -R asterisk:asterisk /var/lib/asterisk
