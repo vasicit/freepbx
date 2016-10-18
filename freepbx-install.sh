@@ -42,7 +42,7 @@ tar -xjvf pjproject-2.4.tar.bz2
 rm -f pjproject-2.4.tar.bz2
 cd pjproject-2.4
 CFLAGS='-DPJ_HAS_IPV6=1' ./configure --prefix=/usr --enable-shared --disable-sound \
---disable-resample --disable-video --disable-opencore-amr --libdir=/usr/lib64
+--disable-resample --disable-video --disable-opencore-amr --libdir=/usr/lib64 --enable-sanitize=memory
 make dep
 make
 make install
@@ -53,7 +53,7 @@ tar vxfz jansson.tar.gz
 rm -f jansson.tar.gz
 cd jansson-*
 autoreconf -i
-./configure --libdir=/usr/lib64
+./configure --libdir=/usr/lib64 --enable-sanitize=memory
 make
 make install
 wait ${!}
@@ -61,7 +61,7 @@ wait ${!}
 cd /usr/src
 tar -xzf spandsp-0.0.6.tar.gz
 cd spandsp-0.0.6
-./configure --libdir=/usr/lib64
+./configure --libdir=/usr/lib64 --enable-sanitize=memory
 make
 make install
 wait ${!}
@@ -71,10 +71,11 @@ tar xvfz asterisk-13-current.tar.gz
 rm -f asterisk-13-current.tar.gz
 cd asterisk-*
 contrib/scripts/install_prereq install
-./configure --libdir=/usr/lib64
+./configure --libdir=/usr/lib64 --enable-sanitize=memory
 contrib/scripts/get_mp3_source.sh
 wait ${!}
-make menuselect.makeopts
+make menuselect 
+# make menuselect.makeopts
 wait ${!}
 make
 make install
