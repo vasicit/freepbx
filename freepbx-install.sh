@@ -9,7 +9,12 @@ wait ${!}
 
 yum -y update
 yum -y groupinstall core base "Development Tools"
-yum -y install gcc gcc-c++ git lynx bison mysql-devel mysql-server php php-mysql php-pear php-mbstring php-xml tftp-server httpd make ncurses-devel libtermcap-devel sendmail sendmail-cf caching-nameserver sox newt-devel libxml2-devel libtiff-devel audiofile-devel gtk2-devel subversion kernel-devel git subversion kernel-devel php-process crontabs cronie cronie-anacron wget vim php-xml uuid-devel libtool sqlite-devel unixODBC mysql-connector-odbc libuuid-devel binutils-devel php-ldap
+yum -y install gcc gcc-c++ git lynx bison mysql-devel php php-mysql php-pear php-mbstring php-xml tftp-server httpd make ncurses-devel libtermcap-devel sendmail sendmail-cf caching-nameserver sox newt-devel libxml2-devel libtiff-devel audiofile-devel gtk2-devel subversion kernel-devel git subversion kernel-devel php-process crontabs cronie cronie-anacron wget vim php-xml uuid-devel libtool sqlite-devel unixODBC mysql-connector-odbc libuuid-devel binutils-devel php-ldap
+
+# Install Percona SQL instead of MySQL
+yum install http://www.percona.com/downloads/percona-release/redhat/0.1-3/percona-release-0.1-3.noarch.rpm
+yum install Percona-Server-server-57
+
 wait ${!}
 chkconfig --level 0123456 iptables off
 service iptables stop
@@ -138,6 +143,7 @@ chown -R asterisk:asterisk /var/lib/asterisk/*
 fwconsole ma download conferences
 fwconsole ma install conferences
 fwconsole ma refreshsignatures
+fwconsole chown
 
 cd /usr/bin
 git clone https://github.com/vasicit/freepbx.git
