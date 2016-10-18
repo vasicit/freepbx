@@ -22,6 +22,8 @@ chkconfig --level 345 mysqld on
 service mysqld start
 chkconfig --level 345 httpd on
 service httpd start
+# MySQL secure installation
+mysql_secure_installation
 pear channel-update pear.php.net
 pear install db-1.7.14
 wait ${!}
