@@ -191,6 +191,7 @@ fwconsole ma refreshsignatures
 fwconsole chown
 fwconsole reload
 
+# Set up automatic FreePBX and OS updates
 cd /usr/bin
 git clone https://github.com/vasicit/freepbx.git
 chmod +x /usr/bin/freepbx/*
