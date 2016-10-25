@@ -21,7 +21,7 @@ wait ${!}
 chkconfig --level 0123456 iptables off
 service iptables stop
 chkconfig --level 345 mysqld on
-service mysqld start
+service mysql start
 chkconfig --level 345 httpd on
 service httpd start
 # MySQL secure installation
