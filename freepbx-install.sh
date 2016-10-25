@@ -146,6 +146,7 @@ chown -R asterisk:asterisk /var/log/asterisk/*
 chown -R asterisk:asterisk /var/run/asterisk/*
 chown -R asterisk:asterisk /var/lib/asterisk/*
 
+# Install necessary modules
 fwconsole ma downloadinstall /
 announcement /
 asteriskinfo /     
