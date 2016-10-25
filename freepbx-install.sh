@@ -20,7 +20,7 @@ yum -y install Percona-Server-devel-57
 wait ${!}
 chkconfig --level 0123456 iptables off
 service iptables stop
-chkconfig --level 345 mysqld on
+chkconfig --level 345 mysql on
 service mysql start
 chkconfig --level 345 httpd on
 service httpd start
