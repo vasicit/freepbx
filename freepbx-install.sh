@@ -145,10 +145,50 @@ chown -R asterisk:asterisk /var/lib/asterisk
 chown -R asterisk:asterisk /var/log/asterisk/*
 chown -R asterisk:asterisk /var/run/asterisk/*
 chown -R asterisk:asterisk /var/lib/asterisk/*
-fwconsole ma download conferences
-fwconsole ma install conferences
+
+fwconsole ma downloadinstall /
+announcement /
+asteriskinfo /     
+backup /
+builtin /   
+callforward /
+callrecording /   
+cdr /            
+cel /            
+conferences /    
+contactmanager /
+core /            
+customappsreg /   
+dashboard /        
+directory /
+donotdisturb /
+endpoint /         
+featurecodeadmin /
+firewall /         
+framework /       
+infoservices /     
+ivr /              
+logfiles /        
+music /
+parking  /         
+bpdirectory /
+phonebook /      
+printextensions /
+recordings /  
+ringgroups /   
+sipsettings /    
+soundlang /      
+sysadmin /       
+timeconditions /  
+ttsengines /       
+ucp /             
+userman /          
+voicemail /        
+voicemail_report
+
 fwconsole ma refreshsignatures
 fwconsole chown
+fwconsole reload
 
 cd /usr/bin
 git clone https://github.com/vasicit/freepbx.git
