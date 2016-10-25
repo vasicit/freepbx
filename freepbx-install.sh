@@ -152,9 +152,9 @@ fwconsole chown
 
 cd /usr/bin
 git clone https://github.com/vasicit/freepbx.git
-chmod +x /usr/bin/freepbx/freepbx-update.sh
-chmod +x /usr/bin/freepbx/freepbx-maint.sh
+chmod +x /usr/bin/freepbx/*
 echo '0 3 * * * /usr/bin/freepbx/freepbx-update.sh' >> /etc/crontab
+echo '0 4 * * * /usr/bin/freepbx/centos-update.sh' >> /etc/crontab
 echo '@reboot /usr/bin/freepbx/freepbx-maint.sh' >> /etc/crontab
 wait ${!}
 
