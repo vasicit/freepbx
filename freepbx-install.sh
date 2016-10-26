@@ -129,6 +129,10 @@ yum clean all
 yum -y install php-5.3-zend-guard-loader sysadmin fail2ban incron ImageMagick
 /var/lib/asterisk/bin/freepbx_setting MODULE_REPO http://mirror1.freepbx.org,http://mirror2.freepbx.org
 
+#Harden Apache
+sed -i -e 's/ServerSignature On/ServerSignature Off/g' /etc/httpd/conf/httpd.conf
+sed -i -e 's/ServerTokens OS/ServerTokens Prod/g' /etc/httpd/conf/httpd.conf
+
 service httpd restart
 wait ${!}
 fwconsole ma download sysadmin
