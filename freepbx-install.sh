@@ -155,10 +155,10 @@ chown -R asterisk:asterisk /var/lib/asterisk/*
 # Set up automatic FreePBX and OS updates
 cd /usr/bin
 git clone https://github.com/vasicit/freepbx.git
-chmod +x /usr/bin/freepbx/*
-echo '0 3 * * * /usr/bin/freepbx/freepbx-update.sh' >> /etc/crontab
-echo '0 4 * * * /usr/bin/freepbx/centos-update.sh' >> /etc/crontab
-echo '@reboot /usr/bin/freepbx/freepbx-maint.sh' >> /etc/crontab
+chmod +x /usr/bin/freepbx/*.sh
+echo '0 3 * * * ./usr/bin/freepbx/freepbx-update.sh' >> /etc/crontab
+echo '0 4 * * * ./usr/bin/freepbx/centos-update.sh' >> /etc/crontab
+echo '@reboot ./usr/bin/freepbx/freepbx-maint.sh' >> /etc/crontab
 wait ${!}
 
 sleep 10
