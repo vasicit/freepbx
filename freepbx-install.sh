@@ -8,14 +8,14 @@ wait ${!}
 
 yum -y update
 yum -y groupinstall core base "Development Tools"
-yum -y install gcc gcc-c++ git lynx bison php php-mysql php-pear php-mbstring php-xml tftp-server httpd make ncurses-devel libtermcap-devel sendmail sendmail-cf caching-nameserver sox newt-devel libxml2-devel libtiff-devel audiofile-devel gtk2-devel subversion kernel-devel git subversion kernel-devel php-process crontabs cronie cronie-anacron wget vim php-xml uuid-devel libtool sqlite-devel unixODBC mysql-connector-odbc libuuid-devel binutils-devel php-ldap
+yum -y install gcc gcc-c++ git lynx bison mysql-server mysql-devel php php-mysql php-pear php-mbstring php-xml tftp-server httpd make ncurses-devel libtermcap-devel sendmail sendmail-cf caching-nameserver sox newt-devel libxml2-devel libtiff-devel audiofile-devel gtk2-devel subversion kernel-devel git subversion kernel-devel php-process crontabs cronie cronie-anacron wget vim php-xml uuid-devel libtool sqlite-devel unixODBC mysql-connector-odbc libuuid-devel binutils-devel php-ldap
 
 # If not Percona install mysql-server mysql-devel
 
 # Install Percona SQL instead of MySQL
-yum -y install http://www.percona.com/downloads/percona-release/redhat/0.1-3/percona-release-0.1-3.noarch.rpm
-yum -y install Percona-Server-server-57
-yum -y install Percona-Server-devel-57
+#yum -y install http://www.percona.com/downloads/percona-release/redhat/0.1-3/percona-release-0.1-3.noarch.rpm
+#yum -y install Percona-Server-server-57
+#yum -y install Percona-Server-devel-57
 
 wait ${!}
 chkconfig --level 0123456 iptables off
@@ -24,8 +24,10 @@ chkconfig --level 345 mysql on
 service mysql start
 chkconfig --level 345 httpd on
 service httpd start
+
 # MySQL secure installation
-#mysql_secure_installation
+mysql_secure_installation
+
 pear channel-update pear.php.net
 pear install db-1.7.14
 wait ${!}
@@ -149,51 +151,6 @@ chown -R asterisk:asterisk /var/lib/asterisk
 chown -R asterisk:asterisk /var/log/asterisk/*
 chown -R asterisk:asterisk /var/run/asterisk/*
 chown -R asterisk:asterisk /var/lib/asterisk/*
-
-# Install necessary modules
-fwconsole ma downloadinstall /
-announcement /
-asteriskinfo /     
-backup /
-builtin /   
-callforward /
-callrecording /   
-cdr /            
-cel /            
-conferences /    
-contactmanager /
-core /            
-customappsreg /   
-dashboard /        
-directory /
-donotdisturb /
-endpoint /         
-featurecodeadmin /
-firewall /         
-framework /       
-infoservices /     
-ivr /              
-logfiles /        
-music /
-parking  /         
-bpdirectory /
-phonebook /      
-printextensions /
-recordings /  
-ringgroups /   
-sipsettings /    
-soundlang /      
-sysadmin /       
-timeconditions /  
-ttsengines /       
-ucp /             
-userman /          
-voicemail /        
-voicemail_report
-
-fwconsole ma refreshsignatures
-fwconsole chown
-fwconsole reload
 
 # Set up automatic FreePBX and OS updates
 cd /usr/bin
