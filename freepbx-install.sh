@@ -80,7 +80,7 @@ contrib/scripts/install_prereq install
 ./configure --libdir=/usr/lib64 --enable-sanitize=memory
 contrib/scripts/get_mp3_source.sh
 wait ${!}
-make menuselect 
+make menuselect.makeopts 
 # make menuselect.makeopts
 wait ${!}
 make
