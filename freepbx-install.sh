@@ -156,9 +156,9 @@ chown -R asterisk:asterisk /var/lib/asterisk/*
 cd /usr/bin
 git clone https://github.com/vasicit/freepbx.git
 chmod +x /usr/bin/freepbx/*.sh
-echo '0 3 * * * ./usr/bin/freepbx/freepbx-update.sh' >> /var/spool/cron/root
-echo '0 4 * * * ./usr/bin/freepbx/centos-update.sh' >> /var/spool/cron/root
-echo '@reboot ./usr/bin/freepbx/freepbx-maint.sh' >> /var/spool/cron/root
+echo '0 3 * * * /usr/bin/freepbx/freepbx-update.sh' >> /var/spool/cron/root
+echo '0 4 * * * /usr/bin/freepbx/centos-update.sh' >> /var/spool/cron/root
+echo '@reboot /usr/bin/freepbx/freepbx-maint.sh' >> /var/spool/cron/root
 wait ${!}
 
 sleep 10
