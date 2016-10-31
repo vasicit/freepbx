@@ -20,8 +20,8 @@ yum -y install gcc gcc-c++ git lynx bison MariaDB-server MariaDB-devel php php-m
 wait ${!}
 chkconfig --level 0123456 iptables off
 service iptables stop
-chkconfig --level 345 mysql on
-service mysql start
+chkconfig --level 345 mysqld on
+service mysqld start
 chkconfig --level 345 httpd on
 service httpd start
 
