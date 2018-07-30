@@ -77,7 +77,8 @@ tar xvfz asterisk-13-current.tar.gz
 rm -f asterisk-13-current.tar.gz
 cd asterisk-*
 contrib/scripts/install_prereq install
-./configure --libdir=/usr/lib64 --enable-sanitize=memory
+# --with-pjproject-bundled -> https://blogs.asterisk.org/2016/03/16/asterisk-13-8-0-now-easier-pjsip-install-method/
+./configure --libdir=/usr/lib64 --enable-sanitize=memory --with-pjproject-bundled
 contrib/scripts/get_mp3_source.sh
 wait ${!}
 make menuselect.makeopts 
