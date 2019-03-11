@@ -37,7 +37,7 @@ adduser asterisk -M -c "Asterisk User"
 cd /usr/src
 wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-current.tar.gz
 wget http://downloads.asterisk.org/pub/telephony/libpri/libpri-current.tar.gz
-wget http://soft-switch.org/downloads/spandsp/spandsp-0.0.6.tar.gz
+wget https://www.soft-switch.org/downloads/spandsp/snapshots/spandsp-20180108.tar.gz
 wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-13-current.tar.gz
 wget -O jansson.tar.gz https://github.com/akheron/jansson/archive/v2.7.tar.gz
 wget http://www.pjsip.org/release/2.4/pjproject-2.4.tar.bz2
@@ -65,7 +65,7 @@ make install
 wait ${!}
 
 cd /usr/src
-tar -xzf spandsp-0.0.6.tar.gz
+tar -xzf spandsp-20180108.tar.gz
 cd spandsp-0.0.6
 ./configure --libdir=/usr/lib64 --enable-sanitize=memory
 make
